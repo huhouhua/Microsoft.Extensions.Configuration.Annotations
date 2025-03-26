@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: install licctl CLI
+      - name: Install licctl CLI
         run: |
-          curl -sL -o licctl.tar.gz https://github.com/seacraft/licctl/releases/download/v1.0.1/licctl-v1.0.1-linux-amd64.tar.gz
+          curl -# -L -o licctl.tar.gz https://github.com/seacraft/licctl/releases/download/v1.0.1/licctl-v1.0.1-linux-amd64.tar.gz
           tar -xzvf licctl.tar.gz
           sudo mv licctl /usr/local/bin/
           sudo chmod +x /usr/local/bin/licctl
-          licctl --help
-      - name: check
+          licctl --help || true
+      - name: Run License Check
         run: |
           licctl --check -f ./boilerplate.txt ./src
           licctl --check -f ./boilerplate.txt ./test
