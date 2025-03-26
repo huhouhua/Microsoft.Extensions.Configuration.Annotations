@@ -37,7 +37,7 @@ jobs:
         run: dotnet build -c Release -v n
       - name: test
         run: |
-          dotnet test ./test/Microsoft.Extensions.Configuration.Annotations.Test.csproj
+          dotnet test ./test/Microsoft.Extensions.Configuration.Annotations.Test/Microsoft.Extensions.Configuration.Annotations.Test.csproj
 
   windows-build:
     runs-on: windows-latest
@@ -52,4 +52,4 @@ jobs:
         run: dotnet build -c Release -v n
       - name: test
         run: |
-          dotnet test ./test/Microsoft.Extensions.Configuration.Annotations.Test.csproj
+          dotnet test ./test/Microsoft.Extensions.Configuration.Annotations.Test/Microsoft.Extensions.Configuration.Annotations.Test.csproj
