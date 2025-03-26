@@ -1,9 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFrameworks>net8.0;</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Description>Use Microsoft.Extensions.Configuration.Annotations attributes binding get Microsoft.Extensions.Configuration options.
+
+            Release notes:
+            
+            1.0.0: Upgrade Microsoft.NET.Sdk to net8.0.</Description>
+        <PackageTags>binding via attributes</PackageTags>
+        <Version>1.0.0</Version>
+        <PackageReleaseNotes>$(Description)</PackageReleaseNotes>
+        <PolySharpExcludeGeneratedTypes>System.Runtime.CompilerServices.RequiresLocationAttribute;System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute</PolySharpExcludeGeneratedTypes>
     </PropertyGroup>
 
     <ItemGroup>
