@@ -6,18 +6,19 @@ jobs:
   check:
     name: check license
     runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-    - name: install licctl cli
-      run: |
-        curl -L https://github.com/seacraft/licctl/releases/download/v1.0.1/licctl-v1.0.1-linux-amd64.tar.gz
-        tar -xzvf licctl-v1.0.1-linux-amd64.tar.gz
-        mv licctl /usr/local/bin/ && chmod +x /usr/local/bin/licctl
-        licctl --help
-    - name: check
-      run: |
-        licctl --check -f ./boilerplate.txt ./src
-        licctl --check -f ./boilerplate.txt ./test
+    steps:
+      - uses: actions/checkout@v4
+      - name: install licctl CLI
+        run: |
+          curl -L https://github.com/seacraft/licctl/releases/download/v1.0.1/licctl-v1.0.1-linux-amd64.tar.gz
+          tar -xzvf licctl-v1.0.1-linux-amd64.tar.gz
+          mv licctl /usr/local/bin/ && chmod +x /usr/local/bin/licctl
+          licctl --help
+      - name: check
+        run: |
+          licctl --check -f ./boilerplate.txt ./src
+          licctl --check -f ./boilerplate.txt ./test
+  
   unix-build:
     name: Running tests on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
