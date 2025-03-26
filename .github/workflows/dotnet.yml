@@ -1,0 +1,53 @@
+name: Run .NET Build and Test
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    name: check license
+    runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+    - name: install licctl cli
+      run: |
+        curl -L https://github.com/seacraft/licctl/releases/download/v1.0.1/licctl-v1.0.1-linux-amd64.tar.gz
+        tar -xzvf licctl-v1.0.1-linux-amd64.tar.gz
+        mv licctl /usr/local/bin/ && chmod +x /usr/local/bin/licctl
+        licctl --help
+    - name: check
+      run: |
+        licctl --check -f ./boilerplate.txt ./src
+        licctl --check -f ./boilerplate.txt ./test
+  unix-build:
+    name: Running tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    needs: check
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x
+      - name: build
+        run: dotnet build -c Release -v n
+      - name: test
+        run: |
+          dotnet test ./test/Microsoft.Extensions.Configuration.Annotations.Test.csproj
+
+  windows-build:
+    runs-on: windows-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x
+      - name: build
+        run: dotnet build -c Release -v n
+      - name: test
+        run: |
+          dotnet test ./test/Microsoft.Extensions.Configuration.Annotations.Test.csproj
