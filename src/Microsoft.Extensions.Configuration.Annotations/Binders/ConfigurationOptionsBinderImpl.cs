@@ -7,11 +7,8 @@ namespace Microsoft.Extensions.Configuration.Annotations.Binders;
 
 /// <summary>
 /// A concrete implementation of `ConfigurationOptionsBinder` for binding `IConfiguration`
-/// to an options class of type `TOptions`.
 /// </summary>
-/// <typeparam name="TOptions">The options class type to be bound.</typeparam>
-internal class ConfigurationOptionsBinderImpl<TOptions> : ConfigurationOptionsBinder
-    where TOptions : class
+internal class ConfigurationOptionsBinderImpl : ConfigurationOptionsBinder
 {
     private readonly IServiceCollection services;
 
@@ -29,7 +26,10 @@ internal class ConfigurationOptionsBinderImpl<TOptions> : ConfigurationOptionsBi
     /// </summary>
     /// <param name="configuration">Configuration source to bind.</param>
     /// <param name="configureBinder">Optional action to configure binding behavior.</param>
-    public override void Bind(IConfiguration configuration, Action<BinderOptions> configureBinder)
+    /// <param name="options">The options object that will be populated with the configuration values. 
+    /// This object must be of the specified <typeparamref name="TOptions"/> type.</param>
+    /// <typeparam name="TOptions">The options class type to be bound.</typeparam>
+    public override void Bind<TOptions>(IConfiguration configuration,TOptions options, Action<BinderOptions>? configureBinder)
     {
         // Registers TOptions in the DI container and binds it to the provided configuration section.
         this.services.AddOptions<TOptions>().Bind(configuration, configureBinder);
