@@ -11,7 +11,10 @@ on:
         description: Create a release
         required: true
         default: "true"
-  
+      version:
+        description: release version
+        required: false
+        default: ${{ github.event.inputs.release == 'true' && '' || '' }}
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -19,8 +22,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-    outputs:
-      package_version: ${{ steps.build_script.outputs.package_version }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup .NET
@@ -41,7 +42,7 @@ jobs:
           path: artifacts/
           if-no-files-found: error
   release:
-    if: ${{ github.event.inputs.release }}
+    if: ${{ github.event.inputs.release && github.event.inputs.version != '' }}
     needs: build
     runs-on: windows-latest
     env:
