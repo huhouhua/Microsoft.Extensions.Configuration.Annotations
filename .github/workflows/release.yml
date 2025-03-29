@@ -15,6 +15,10 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
     outputs:
       package_version: ${{ steps.build_script.outputs.package_version }}
     steps:
