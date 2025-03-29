@@ -1,0 +1,100 @@
+name: Release
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      is_stable_build:
+        description: Use a version number indicating this is a stable release
+        required: true
+        default: "false"
+      release:
+        description: Create a release
+        required: true
+        default: "false"
+
+env:
+  IS_STABLE_BUILD: ${{ github.event.inputs.is_stable_build }}
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    outputs:
+      package_version: ${{ steps.build_script.outputs.package_version }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+      - name: Run build
+        uses: ./.github/workflows/dotnet.yml
+#      - uses: actions/upload-artifact@v4
+#        if: ${{ matrix.os == 'windows-latest' }}
+#        with:
+#          name: packages
+#          path: artifacts/
+#          if-no-files-found: error
+#      - uses: codecov/codecov-action@v4
+#        with:
+#          name: unittests-${{ matrix.os }}
+#          fail_ci_if_error: true
+#          token: ${{ secrets.CODECOV_TOKEN }}
+  release:
+    if: ${{ github.event.inputs.release }}
+    needs: build
+    runs-on: windows-latest
+    env:
+      PACKAGE_VERSION: ${{ needs.build.outputs.package_version }}
+    steps:
+      - run: echo "Releasing ${{ env.PACKAGE_VERSION }}"
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
+        with:
+          nuget-version: latest
+      - uses: actions/download-artifact@v4
+        with:
+          name: packages
+          path: packages
+      - name: Configure GitHub NuGet registry
+        run: nuget sources add -name github -source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json -username ${{ github.repository_owner }} -password ${{ secrets.GITHUB_TOKEN }}
+      - name: Push to GitHub package registry
+        run: nuget push packages\*.nupkg -ApiKey ${{ secrets.GITHUB_TOKEN }} -Source github -SkipDuplicate
+      - name: Push to NuGet.org
+        run: nuget push packages\*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ${{ env.PACKAGE_VERSION }}
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          body: |
+            ## How to get this update
+            Packages have been posted to these feeds:
+
+            #### NuGet.org
+            https://nuget.org/packages/Microsoft.Extensions.Configuration.Annotations/${{ env.PACKAGE_VERSION }}
+
+            #### GitHub Package Registry
+            https://github.com/natemcmaster?tab=packages&repo_name=Annotations
+
+          draft: false
+          append_body: true
+          generate_release_notes: true
+          prerelease: ${{ env.IS_STABLE_BUILD == 'false' }} # Example: v3.1.0-beta
+          files: packages/*
+        
+        
+        
+        
