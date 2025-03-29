@@ -4,10 +4,10 @@ using Microsoft.Extensions.Options;
 namespace Annotations.ConsoleApp.Examples;
 
 [Validate(typeof(AppValidateOptions))]
-[Options("app")]
+[Options(SessionKey = "app",BindNonPublicProperties = true,ErrorOnUnknownConfiguration = true)]
 public class AppOptions
 {
-    public int Id { get; set; }
+    private int Id { get; set; }
     
     public string Name {get; set; }
     

@@ -12,19 +12,19 @@ public class OptionsAttribute : Attribute
     /// <summary>
     /// Gets the configuration section name.
     /// </summary>
-    public string? SessionKey { get; }
+    public string? SessionKey { get; set; }
 
     /// <summary>
     /// Determines whether non-public properties should be bound.
     /// Default is false
     /// </summary>
-    public bool BindNonPublicProperties { get; }
+    public bool BindNonPublicProperties { get; set; }
     
     /// <summary>
     /// Specifies whether an error should be thrown for unknown configuration properties.
     /// Default is false
     /// </summary>
-    public bool ErrorOnUnknownConfiguration { get; }
+    public bool ErrorOnUnknownConfiguration { get; set; }
     
     
     /// <summary>

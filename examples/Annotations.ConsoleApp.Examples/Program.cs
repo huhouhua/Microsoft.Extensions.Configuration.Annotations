@@ -7,7 +7,6 @@ using Microsoft.Extensions.Options;
 
 IServiceCollection services = new ServiceCollection();
 IConfigurationBuilder builder = new ConfigurationBuilder();
-
 // Add option data
 builder.AddInMemoryCollection(InitialData());
 
@@ -17,12 +16,11 @@ IConfigurationRoot configurationRoot = builder.Build();
 services.AddAttributeConfigurationOptions(configurationRoot,true , typeof(Program).Assembly);
 
 
-var provider = services.BuildServiceProvider();
+IServiceProvider provider = services.BuildServiceProvider();
 
 // Gets Options with Options Attribute
 var options =  provider.GetService<IOptions<AppOptions>>();
 
-Console.WriteLine(options.Value.Id);
 Console.WriteLine(options.Value.Name);
 Console.WriteLine(options.Value.Version);
 Console.WriteLine(options.Value.Description);
