@@ -11,7 +11,11 @@ on:
         description: Create a release
         required: true
         default: "true"
-    
+
+permissions:
+  actions: write
+  contents: write
+  
 jobs:
   build:
     runs-on: ${{ matrix.os }}
