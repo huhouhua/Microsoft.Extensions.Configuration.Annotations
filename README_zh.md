@@ -1,13 +1,14 @@
 # 使用 `Microsoft.Extensions.Configuration.Annotations` 注册Options
 
-> Microsoft.Extensions.Configuration.Annotations 是一个用于扩展 `Microsoft.Extensions.Configuration` 配置功能的库，提供注解支持，
+> [English](README.md) | 中文
+
+> Microsoft.Extensions.Configuration.Annotations 是一个用于扩展 `Microsoft.Extensions.Configuration` 配置功能库，提供注解支持，
 > 使得你可以在配置绑定过程中通过 `AOP`对配置项进行更灵活和结构化的控制。
 
-
 ## 特性
-注解支持: 通过注解的方式绑定与验证配置项
+- 注解支持: 通过注解的方式绑定与验证配置项
 
-与现有配置体系兼容: 完全兼容 Microsoft.Extensions.Configuration，可以在现有的项目中无缝集成。
+- 与现有配置体系兼容: 完全兼容 Microsoft.Extensions.Configuration，可以在现有的项目中无缝集成。
 
 
 ## 如何使用
