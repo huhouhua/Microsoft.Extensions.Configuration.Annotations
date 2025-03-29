@@ -6,7 +6,6 @@ using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.Configuration.Annotations.Test;
 
-[Validate(typeof(MyAppValidateOptions))]
 [Options("app")]
 public class MyAppOptions
 {
@@ -17,12 +16,4 @@ public class MyAppOptions
     public string Version { get; set; }
     
     public string Description { get; set; }
-}
-
-public class MyAppValidateOptions : IValidateOptions<MyAppOptions>
-{
-    public ValidateOptionsResult Validate(string name, MyAppOptions options)
-    {
-        return ValidateOptionsResult.Success;
-    }
 }

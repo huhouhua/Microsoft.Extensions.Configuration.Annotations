@@ -47,7 +47,7 @@ namespace Microsoft.Extensions.Configuration.Annotations.Binders
             this.OptionsAttribute = optionsAttribute ?? throw new ArgumentNullException(nameof(optionsAttribute));
             this.ValidateAttribute = validateAttribute;
             this.EnableGlobalAnnotation = enableGlobalAnnotation;
-            this.ConfigureBinder= binderOptions =>
+            this.ConfigureBinder = binderOptions =>
             {
                 // Configure binding options: whether to bind non-public properties and whether to throw errors for unknown configuration properties
                 binderOptions.BindNonPublicProperties = OptionsAttribute.BindNonPublicProperties;

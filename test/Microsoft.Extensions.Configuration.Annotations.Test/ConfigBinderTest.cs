@@ -11,7 +11,7 @@ public class ConfigBinderTest
 {
     [Theory]
     [MemberData(nameof(Setup))]
-    public void ReadEqualTest(IServiceProvider provider, IConfigurationRoot configurationRoot)
+    public void EqualBindTest(IServiceProvider provider, IConfigurationRoot configurationRoot)
     {
         var options = provider.GetService<IOptions<MyAppOptions>>();
         Assert.NotNull(options);
@@ -20,6 +20,23 @@ public class ConfigBinderTest
         Assert.Equal(options.Value.Version, configurationRoot["app:version"]);
         Assert.Equal(options.Value.Description, configurationRoot["app:description"]);
     }
+    
+    [Theory]
+    [MemberData(nameof(Setup))]
+    public void ValidateTest(IServiceProvider provider, IConfigurationRoot configurationRoot)
+    {
+        var options = provider.GetService<IOptions<DevOptions>>();
+        Assert.NotNull(options);
+        Assert.Throws<OptionsValidationException>(() =>
+        {
+             Assert.Empty(options.Value.Name);
+        });
+        Assert.Throws<OptionsValidationException>(() =>
+        {
+            Assert.NotEmpty(options.Value.Environment);
+        });
+    }
+
     
     public static IEnumerable<object[]> Setup()
     {
@@ -44,6 +61,10 @@ public class ConfigBinderTest
              { "app:version", "1.0.0" },
              { "app:description", "test options bind" },
              
+             
+             {"dev:name",""},
+             {"dev:environment","test"},
+             {"dev:variableName","port"}
          };
     }
 
