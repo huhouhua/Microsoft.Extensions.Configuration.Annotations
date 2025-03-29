@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 namespace Annotations.ConsoleApp.Examples;
 
 [Validate]
-[Options("dev")]
+[Options("app")]
 public class AppOptions
 {
     public int Id { get; set; }
