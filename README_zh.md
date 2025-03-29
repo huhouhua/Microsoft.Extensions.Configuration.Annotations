@@ -1,4 +1,8 @@
 # 使用 `Microsoft.Extensions.Configuration.Annotations` 注册Options
+![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
+[![NuGet](https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Annotation.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Annotation/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
+[![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
 
 > [English](README.md) | 中文
 

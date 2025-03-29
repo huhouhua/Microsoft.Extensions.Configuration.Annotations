@@ -1,4 +1,8 @@
 # Registering Options with Microsoft.Extensions.Configuration.Annotations
+![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
+[![NuGet](https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Annotation.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Annotation/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
+[![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
 
 > English | [中文](README_zh.md)
 
@@ -171,7 +175,7 @@ Console.WriteLine(options.Value.Name);
 
 ```
 
-## 贡献
+## Contribute
 
 One of the easiest ways to contribute is to participate in discussions and discuss issues. You can also contribute by submitting pull requests with code changes.
 
