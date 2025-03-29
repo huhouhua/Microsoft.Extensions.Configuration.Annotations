@@ -26,12 +26,6 @@ jobs:
     outputs:
       package_version: ${{ steps.build_script.outputs.package_version }}
     steps:
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: |
-            8.0.x
-            9.0.x
       - name: Run build
         uses: ./.github/workflows/dotnet.yaml
 #      - uses: actions/upload-artifact@v4
