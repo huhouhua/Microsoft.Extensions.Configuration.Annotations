@@ -4,7 +4,7 @@
         <TargetFrameworks>net8.0;</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <PackageId>Microsoft.Extensions.Configuration.Annotations</PackageId>
+        <PackageId>Microsoft.Extensions.Configuration.Annotations1</PackageId>
         <Description>Use Microsoft.Extensions.Configuration.Annotations attributes binding get Microsoft.Extensions.Configuration options.
 
             Release notes:

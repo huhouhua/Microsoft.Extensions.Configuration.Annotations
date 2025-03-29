@@ -16,7 +16,6 @@ public class DevOptions
     public string VariableName {get; set; }
 }
 
-
 public class DevValidateOptions : IValidateOptions<DevOptions>
 {
     public ValidateOptionsResult Validate(string name, DevOptions options)

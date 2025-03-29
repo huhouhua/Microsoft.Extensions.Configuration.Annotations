@@ -16,12 +16,13 @@ on:
         required: false
         default: ""
 jobs:
+#  windows-latest,
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [ ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
       - name: Setup .NET
