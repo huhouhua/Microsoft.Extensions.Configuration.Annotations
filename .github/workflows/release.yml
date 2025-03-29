@@ -11,10 +11,6 @@ on:
         description: Create a release
         required: true
         default: "true"
-        
-permissions:
-  actions: write
-  contents: write
   
 jobs:
   build:
@@ -37,7 +33,13 @@ jobs:
       - name: Run Build  
         run: dotnet build -c Release -v n
       - name: Pack
-        run: dotnet pack --configuration Release --output ./packages
+        run: dotnet pack --configuration Release --output ./artifacts/
+      - uses: actions/upload-artifact@v4
+        if: ${{ matrix.os == 'windows-latest' }}
+        with:
+          name: packages
+          path: artifacts/
+          if-no-files-found: error
   release:
     if: ${{ github.event.inputs.release }}
     needs: build
