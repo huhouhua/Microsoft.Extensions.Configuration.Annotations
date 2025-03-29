@@ -10,10 +10,11 @@ on:
       release:
         description: Create a release
         required: true
-        default: "false"
+        default: "true"
     
 jobs:
   build:
+    runs-on: ${{ matrix.os }}
     outputs:
       package_version: ${{ steps.build_script.outputs.package_version }}
     steps:
