@@ -1,23 +1,22 @@
 name: Release
 
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      is_stable_build:
+        description: Use a version number indicating this is a stable release
+        required: true
+        default: "false"
+      release:
+        description: Create a release
+        required: true
+        default: "false"
     
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-
-    runs-on: ${{ matrix.os }}
-
     outputs:
       package_version: ${{ steps.build_script.outputs.package_version }}
-
     steps:
-      - uses: actions/checkout@v4
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
@@ -25,7 +24,7 @@ jobs:
             8.0.x
             9.0.x
       - name: Run build
-        uses: ./.github/workflows/dotnet.yml
+        uses: ./.github/workflows/dotnet.yaml
 #      - uses: actions/upload-artifact@v4
 #        if: ${{ matrix.os == 'windows-latest' }}
 #        with:
