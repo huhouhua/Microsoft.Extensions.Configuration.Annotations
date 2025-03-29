@@ -12,9 +12,9 @@ on:
         required: true
         default: "true"
       version:
-        description: release version
+        description: Release version
         required: false
-        default: ${{ github.event.inputs.release == 'true' && '' || '' }}
+        default: ""
 jobs:
   build:
     runs-on: ${{ matrix.os }}
