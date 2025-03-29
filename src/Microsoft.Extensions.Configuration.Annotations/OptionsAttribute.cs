@@ -1,7 +1,7 @@
 // Copyright (c) Kevin Berger Authors. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-namespace Microsoft.Extensions.Configuration.Annotations.Binders;
+namespace Microsoft.Extensions.Configuration.Annotations;
 
 /// <summary>
 /// Represents an options attribute for marking configuration classes.
@@ -19,20 +19,21 @@ public class OptionsAttribute : Attribute
     /// Default is false
     /// </summary>
     public bool BindNonPublicProperties { get; }
-
+    
     /// <summary>
     /// Specifies whether an error should be thrown for unknown configuration properties.
     /// Default is false
     /// </summary>
     public bool ErrorOnUnknownConfiguration { get; }
-
+    
+    
     /// <summary>
     /// Initializes an instance of `OptionsAttribute` with an empty section key.
     /// </summary>
     public OptionsAttribute() : this(string.Empty)
     {
     }
-
+    
     /// <summary>
     /// Initializes an instance of `OptionsAttribute` with a specified section key.
     /// </summary>
@@ -41,7 +42,7 @@ public class OptionsAttribute : Attribute
     {
         
     }
-
+    
     /// <summary>
     /// Initializes an instance of `OptionsAttribute` with additional binding configurations.
     /// </summary>

@@ -27,7 +27,7 @@ public class ConfigBinderTest
         IConfigurationBuilder builder = new ConfigurationBuilder();
         builder.AddInMemoryCollection(InitialData());
         IConfigurationRoot configurationRoot = builder.Build();
-        services.AddAttributeConfigurationOptions(configurationRoot, typeof(ConfigBinderTest).Assembly);
+        services.AddAttributeConfigurationOptions(configurationRoot,false , typeof(ConfigBinderTest).Assembly);
         yield return new Object[]
         {
             services.BuildServiceProvider(),
