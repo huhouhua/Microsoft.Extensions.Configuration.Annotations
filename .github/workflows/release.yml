@@ -32,12 +32,12 @@ jobs:
         with:
           dotnet-version: |
             8.0.x
-      - name: Restore dependencies
-        run: dotnet restore
+#      - name: Restore dependencies
+#        run: dotnet restore
       - name: Run Build  
         run: dotnet build -c Release -v n
       - name: Pack
-        run: dotnet pack --configuration Release --output ./artifacts
+        run: dotnet pack --configuration Release --output ./packages
   release:
     if: ${{ github.event.inputs.release }}
     needs: build
