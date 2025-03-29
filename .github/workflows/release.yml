@@ -11,7 +11,7 @@ on:
         description: Create a release
         required: true
         default: "true"
-
+        
 permissions:
   actions: write
   contents: write
@@ -26,19 +26,18 @@ jobs:
     outputs:
       package_version: ${{ steps.build_script.outputs.package_version }}
     steps:
-      - name: Run build
-        uses: ./.github/workflows/dotnet.yaml
-#      - uses: actions/upload-artifact@v4
-#        if: ${{ matrix.os == 'windows-latest' }}
-#        with:
-#          name: packages
-#          path: artifacts/
-#          if-no-files-found: error
-#      - uses: codecov/codecov-action@v4
-#        with:
-#          name: unittests-${{ matrix.os }}
-#          fail_ci_if_error: true
-#          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Run Build  
+        run: dotnet build -c Release -v n
+      - name: Pack
+        run: dotnet pack --configuration Release --output ./artifacts
   release:
     if: ${{ github.event.inputs.release }}
     needs: build
