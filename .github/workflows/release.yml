@@ -46,7 +46,7 @@ jobs:
     needs: build
     runs-on: windows-latest
     env:
-      PACKAGE_VERSION: ${{ needs.build.outputs.package_version }}
+      PACKAGE_VERSION: ${{ github.event.inputs.version }}
     steps:
       - run: echo "Releasing ${{ env.PACKAGE_VERSION }}"
       - name: Setup NuGet
