@@ -24,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{F91FCCA3-8EEF-42F0-9503-719D137B5F9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Annotations.ConsoleApp.Examples", "examples\Annotations.ConsoleApp.Examples\Annotations.ConsoleApp.Examples.csproj", "{3FDC9659-9714-420F-9836-BD60B2BC20FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Annotations.WebAPI.Examples", "examples\Annotations.WebAPI.Examples\Annotations.WebAPI.Examples.csproj", "{613E277D-A018-4BC7-8413-A8D3DA825F33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +44,21 @@ Global
 		{71615AD7-44AF-49BF-B15F-5E091F8846ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71615AD7-44AF-49BF-B15F-5E091F8846ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71615AD7-44AF-49BF-B15F-5E091F8846ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDC9659-9714-420F-9836-BD60B2BC20FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDC9659-9714-420F-9836-BD60B2BC20FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDC9659-9714-420F-9836-BD60B2BC20FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDC9659-9714-420F-9836-BD60B2BC20FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613E277D-A018-4BC7-8413-A8D3DA825F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613E277D-A018-4BC7-8413-A8D3DA825F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613E277D-A018-4BC7-8413-A8D3DA825F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613E277D-A018-4BC7-8413-A8D3DA825F33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{425C0637-EF92-4085-9648-48879A006815} = {0FA65A07-CEDE-4D51-84E9-C8445139C50D}
 		{71615AD7-44AF-49BF-B15F-5E091F8846ED} = {B919ABC4-D7F5-425F-9A3E-5187D561F2E3}
 		{E0BCF406-E25A-4BCA-B0B0-F5168F7080D4} = {201E4D15-1D5A-4922-AE64-25E77083D1DD}
 		{401D857E-C9DF-4148-89F0-886852E2984A} = {E0BCF406-E25A-4BCA-B0B0-F5168F7080D4}
+		{3FDC9659-9714-420F-9836-BD60B2BC20FA} = {F91FCCA3-8EEF-42F0-9503-719D137B5F9F}
+		{613E277D-A018-4BC7-8413-A8D3DA825F33} = {F91FCCA3-8EEF-42F0-9503-719D137B5F9F}
 	EndGlobalSection
 EndGlobal
