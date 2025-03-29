@@ -3,6 +3,7 @@
 using Annotations.ConsoleApp.Examples;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 IServiceCollection services = new ServiceCollection();
 IConfigurationBuilder builder = new ConfigurationBuilder();
@@ -19,12 +20,12 @@ services.AddAttributeConfigurationOptions(configurationRoot,true , typeof(Progra
 var provider = services.BuildServiceProvider();
 
 // Gets Options with Options Attribute
-var options =  provider.GetService<AppOptions>();
+var options =  provider.GetService<IOptions<AppOptions>>();
 
-Console.WriteLine(options.Id);
-Console.WriteLine(options.Name);
-Console.WriteLine(options.Version);
-Console.WriteLine(options.Description);
+Console.WriteLine(options.Value.Id);
+Console.WriteLine(options.Value.Name);
+Console.WriteLine(options.Value.Version);
+Console.WriteLine(options.Value.Description);
 
 static Dictionary<string, string?> InitialData()
 {

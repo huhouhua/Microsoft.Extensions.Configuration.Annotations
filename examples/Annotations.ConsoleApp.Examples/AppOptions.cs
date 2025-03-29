@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 
 namespace Annotations.ConsoleApp.Examples;
 
-[Validate]
+[Validate(typeof(AppValidateOptions))]
 [Options("app")]
 public class AppOptions
 {
