@@ -62,7 +62,7 @@ jobs:
       - name: Push to GitHub package registry
         run: nuget push packages\*.nupkg -ApiKey ${{ secrets.GITHUB_TOKEN }} -Source github -SkipDuplicate
       - name: Push to NuGet.org
-        run: nuget push packages\*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+        run: nuget push packages\*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         env:
