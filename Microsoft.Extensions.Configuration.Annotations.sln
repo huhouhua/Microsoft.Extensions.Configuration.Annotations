@@ -34,6 +34,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Annotations.ConsoleApp.Exam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Annotations.WebAPI.Examples", "examples\Annotations.WebAPI.Examples\Annotations.WebAPI.Examples.csproj", "{613E277D-A018-4BC7-8413-A8D3DA825F33}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{FC946277-D754-4053-8C74-A5DA96CA446F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\Bug_report.md = .github\ISSUE_TEMPLATE\Bug_report.md
+		.github\ISSUE_TEMPLATE\Custom.md = .github\ISSUE_TEMPLATE\Custom.md
+		.github\ISSUE_TEMPLATE\Feature_request.md = .github\ISSUE_TEMPLATE\Feature_request.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,5 +71,6 @@ Global
 		{401D857E-C9DF-4148-89F0-886852E2984A} = {E0BCF406-E25A-4BCA-B0B0-F5168F7080D4}
 		{3FDC9659-9714-420F-9836-BD60B2BC20FA} = {F91FCCA3-8EEF-42F0-9503-719D137B5F9F}
 		{613E277D-A018-4BC7-8413-A8D3DA825F33} = {F91FCCA3-8EEF-42F0-9503-719D137B5F9F}
+		{FC946277-D754-4053-8C74-A5DA96CA446F} = {E0BCF406-E25A-4BCA-B0B0-F5168F7080D4}
 	EndGlobalSection
 EndGlobal
