@@ -75,7 +75,7 @@ jobs:
             Packages have been posted to these feeds:
 
             #### NuGet.org
-            https://nuget.org/packages/MS.Extensions.Configuration.Annotations/${{ env.PACKAGE_VERSION }}
+            https://nuget.org/packages/Ares.Extensions.Configuration.Annotations/${{ env.PACKAGE_VERSION }}
 
             #### GitHub Package Registry
             https://github.com/huhouhua?tab=packages&repo_name=Annotations

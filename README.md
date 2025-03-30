@@ -1,6 +1,6 @@
 # Registering Options with Microsoft.Extensions.Configuration.Annotations
 ![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
-[![NuGet](https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Annotation.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Annotation/)
+[![NuGet](https://img.shields.io/nuget/v/Ares.Extensions.Configuration.Annotation.svg)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotation/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
 [![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
 
@@ -19,16 +19,16 @@ and can be seamlessly integrated into existing projects.
 
 ## How to Use
 
-Install the [Nuget](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Annotations) package:
+Install the [Nuget](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations) package:
 
 ```sh
-Install-Package Microsoft.Extensions.Configuration.Annotations
+Install-Package Ares.Extensions.Configuration.Annotations
 ```
 
 Or via .NET CLI:
 
 ```sh
-dotnet add package Microsoft.Extensions.Configuration.Annotations
+dotnet add package Ares.Extensions.Configuration.Annotations
 ```
 
 ### Configuration

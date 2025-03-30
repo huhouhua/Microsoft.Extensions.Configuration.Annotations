@@ -1,6 +1,6 @@
 # 使用 `Microsoft.Extensions.Configuration.Annotations` 注册Options
 ![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
-[![NuGet](https://img.shields.io/nuget/v/Microsoft.Extensions.Configuration.Annotation.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Annotation/)
+[![NuGet](https://img.shields.io/nuget/v/Ares.Extensions.Configuration.Annotation.svg)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotation/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
 [![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
 
@@ -17,16 +17,16 @@
 
 ## 如何使用
 
-安装 [Nuget](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Annotations) 包.
+安装 [Nuget](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations) 包.
 
 ```sh
-Install-Package Microsoft.Extensions.Configuration.Annotations
+Install-Package Ares.Extensions.Configuration.Annotations
 ```
 
 或通过 .NET CLI：
 
 ```sh
-dotnet add package Microsoft.Extensions.Configuration.Annotations
+dotnet add package Ares.Extensions.Configuration.Annotations
 ```
 
 ### Configuration
