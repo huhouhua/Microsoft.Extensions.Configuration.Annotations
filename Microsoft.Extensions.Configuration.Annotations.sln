@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{F91FCCA3-8EEF-42F0-9503-719D137B5F9F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{F91FCCA3-8EEF-42F0-9503-719D137B5F9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Annotations.ConsoleApp.Examples", "examples\Annotations.ConsoleApp.Examples\Annotations.ConsoleApp.Examples.csproj", "{3FDC9659-9714-420F-9836-BD60B2BC20FA}"
 EndProject
