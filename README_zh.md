@@ -35,7 +35,7 @@ dotnet add package Ares.Extensions.Configuration.Annotations
 ```c#
 var builder = WebApplication.CreateBuilder(args);
 
-// 添加 Microsoft.Extensions.Configuration.Annotations
+// 添加 Ares.Extensions.Configuration.Annotations
 // 并且把`Program`程序集下的所有定义了`OptionsAttribute`的`Attribute` 添加到IServiceCollection
 builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typeof(Program).Assembly);
 ```

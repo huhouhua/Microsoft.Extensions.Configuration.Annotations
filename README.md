@@ -37,7 +37,7 @@ First, configure it in the Program.cs file as follows:
 ```c#
 var builder = WebApplication.CreateBuilder(args);
 
-// Add Microsoft.Extensions.Configuration.Annotations
+// Add Ares.Extensions.Configuration.Annotations
 // Add all `OptionsAttribute` defined in the `Program` assembly to the IServiceCollection
 builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typeof(Program).Assembly);
 ```
