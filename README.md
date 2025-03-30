@@ -56,7 +56,7 @@ public class MyAppOptions
 }
 ```
 
-Example: Bind Non-Public Fields
+Example: Bind Non-Public Properties
 ```c#
 [Options(SessionKey = "app", BindNonPublicProperties = true)]
 public class AppOptions
@@ -67,7 +67,7 @@ public class AppOptions
     ...
 }
 ```
-Example: Throw Exception if Missing Fields
+Example: Throw Exception if Missing Properties
 ```c#
 // appsettings.json Configuration
 //

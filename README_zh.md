@@ -54,7 +54,7 @@ public class MyAppOptions
 }
 ```
 
-示例 绑定非public的字段
+示例 绑定非public的属性
 ```c#
 [Options(SessionKey = "app", BindNonPublicProperties = true)]
 public class AppOptions
@@ -65,7 +65,7 @@ public class AppOptions
     ...
 }
 ```
-示例 缺少没有定义的字段，则抛出异常
+示例 缺少没有定义的属性，则抛出异常
 ```c#
 // appsettings.json配置
 //
