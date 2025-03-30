@@ -161,7 +161,7 @@ builder.AddInMemoryCollection(new Dictionary<string, string?>()
 
 IConfigurationRoot configurationRoot = builder.Build();
 
-builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typeof(Program).Assembly);
+services.AddAttributeConfigurationOptions(configurationRoot,true,typeof(Program).Assembly);
 
 var provider = services.BuildServiceProvider();
 
