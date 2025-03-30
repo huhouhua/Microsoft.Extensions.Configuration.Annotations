@@ -140,8 +140,8 @@ public class MyService
 
     public void PrintSettings()
     {
-      Console.WriteLine(options.Value.Id);
-      Console.WriteLine(options.Value.Name);
+      Console.WriteLine(_myAppOptions.Id);
+      Console.WriteLine(_myAppOptions.Name);
     }
 }
 ```
