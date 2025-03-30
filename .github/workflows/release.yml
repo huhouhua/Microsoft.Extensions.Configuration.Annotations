@@ -78,7 +78,7 @@ jobs:
             https://nuget.org/packages/Ares.Extensions.Configuration.Annotations/${{ env.PACKAGE_VERSION }}
 
             #### GitHub Package Registry
-            https://github.com/huhouhua?tab=packages&repo_name=Annotations
+            https://github.com/huhouhua?ecosystem=nuget&tab=packages&repo_name=Annotations
 
           draft: false
           append_body: true
