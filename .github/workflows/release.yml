@@ -62,7 +62,7 @@ jobs:
       - name: Push to GitHub package registry
         run: nuget push packages\*.nupkg -ApiKey ${{ secrets.GITHUB_TOKEN }} -Source github -SkipDuplicate
       - name: Push to NuGet.org
-        run: nuget push packages\*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json -SkipDuplicate
+        run: nuget push packages\*.nupkg -ApiKey ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         env:
@@ -75,7 +75,7 @@ jobs:
             Packages have been posted to these feeds:
 
             #### NuGet.org
-            https://nuget.org/packages/Microsoft.Extensions.Configuration.Annotations/${{ env.PACKAGE_VERSION }}
+            https://nuget.org/packages/MS.Extensions.Configuration.Annotations/${{ env.PACKAGE_VERSION }}
 
             #### GitHub Package Registry
             https://github.com/huhouhua?tab=packages&repo_name=Annotations
