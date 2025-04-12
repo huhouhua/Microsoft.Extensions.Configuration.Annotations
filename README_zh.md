@@ -14,6 +14,8 @@
 
 - 与现有配置体系兼容: 完全兼容 Microsoft.Extensions.Configuration，可以在现有的项目中无缝集成。
 
+## 要求
+ 需要.NET 8.0+版本
 
 ## 如何使用
 
