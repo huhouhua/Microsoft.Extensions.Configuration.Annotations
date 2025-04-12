@@ -44,7 +44,9 @@ builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typ
 
 ### 如何定义?
 
-示例 标准的Options类
+[示例](examples/)目录包含几个清晰的示例
+
+标准的Options类
 ```c#
 [Options("app")]
 public class MyAppOptions
@@ -56,7 +58,7 @@ public class MyAppOptions
 }
 ```
 
-示例 绑定非public的属性
+绑定非public的属性
 ```c#
 [Options(SessionKey = "app", BindNonPublicProperties = true)]
 public class AppOptions
@@ -67,7 +69,7 @@ public class AppOptions
     ...
 }
 ```
-示例 缺少没有定义的属性，则抛出异常
+缺少没有定义的属性，则抛出异常
 ```c#
 // appsettings.json配置
 //
@@ -88,7 +90,7 @@ public class AppOptions
 ```
 ### 验证器
 
-示例 带验证器的Options类
+带验证器的Options类
 ```c#
 [Validate]
 [Options("app")]
@@ -103,7 +105,7 @@ public class MyAppOptions
 }
 ```
 
-示例 自定义验证器的Options类
+自定义验证器的Options类
 ```c#
 [Validate(typeof(MyAppValidateOptions))]
 [Options("app")]
@@ -127,7 +129,7 @@ public class MyAppValidateOptions : IValidateOptions<MyAppOptions>
 ```
 ### 获取Options
 
-示例 在构造函数中获取
+在构造函数中获取
 ```c#
 public class MyService
 {
@@ -146,7 +148,7 @@ public class MyService
 }
 ```
 
-示例 通过IServiceProvider获取
+通过IServiceProvider获取
 ```c#
 IServiceCollection services = new ServiceCollection();
 
