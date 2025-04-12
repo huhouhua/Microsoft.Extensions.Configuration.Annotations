@@ -47,6 +47,8 @@ builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typ
 
 ### How to Define?
 
+The [examples](examples/)  directory contains a couple of clear examples
+
 Example: Standard Options Class
 ```c#
 [Options("app")]
