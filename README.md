@@ -16,6 +16,9 @@
 - Compatibility with Existing Configuration System: Fully compatible with Microsoft.Extensions.Configuration 
 and can be seamlessly integrated into existing projects.
 
+## Requirements
+
+This library requires .NET 8.0+.
 
 ## How to Use
 
