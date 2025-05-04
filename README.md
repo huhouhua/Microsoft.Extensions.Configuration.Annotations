@@ -11,10 +11,10 @@
 > items during the binding process via AOP.
 
 ## Features
-- Attribute Support: Bind and validate configuration items using attributes.
-
+- Attribute Support: Automatically bind and verify configuration items through attributes
+- Automatic registration options
 - Compatibility with Existing Configuration System: Fully compatible with Microsoft.Extensions.Configuration 
-and can be seamlessly integrated into existing projects.
+and can be seamlessly integrated into existing projects
 
 ## Requirements
 
