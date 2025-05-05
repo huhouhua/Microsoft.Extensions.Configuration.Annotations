@@ -2,7 +2,7 @@
 ![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
 [![NuGet](https://img.shields.io/nuget/v/Ares.Extensions.Configuration.Annotations.svg?style=flat-square)](https://www.nuget.org/Ares.Extensions.Configuration.Annotations)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
-[![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
+[![NuGet](https://img.shields.io/nuget/dt/Ares.Extensions.Configuration.Annotations?style=flat&logo=nuget&cacheSeconds=1&label=Downloads)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations)
 
 > [English](README.md) | 中文
 
