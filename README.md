@@ -3,7 +3,6 @@
 [![NuGet](https://img.shields.io/nuget/v/Ares.Extensions.Configuration.Annotations.svg?style=flat-square)](https://www.nuget.org/Ares.Extensions.Configuration.Annotations)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
 [![NuGet](https://img.shields.io/nuget/dt/Ares.Extensions.Configuration.Annotations?style=flat&logo=nuget&cacheSeconds=1&label=Downloads)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations)
-[Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
 
 > English | [中文](README_zh.md)
 
