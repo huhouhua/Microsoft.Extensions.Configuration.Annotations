@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
 [![NuGet](https://img.shields.io/nuget/dt/Ares.Extensions.Configuration.Annotations?style=flat&logo=nuget&cacheSeconds=1&label=Downloads)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations)
 
-> [English](README.md) | 中文
+> [English](README.md) | 简体中文
 
 > Microsoft.Extensions.Configuration.Annotations 是一个用于扩展 `Microsoft.Extensions.Configuration` 配置功能库，提供注解支持，
 > 使得你可以在配置绑定过程中通过 `AOP`对配置项进行自动绑定与注册。
