@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
 [![NuGet](https://img.shields.io/nuget/dt/Ares.Extensions.Configuration.Annotations?style=flat&logo=nuget&cacheSeconds=1&label=Downloads)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations)
 
-> English | [中文](README_zh.md)
+> English | [简体中文](README_zh.md)
 
 > Microsoft.Extensions.Configuration.Annotations is a library that extends the Microsoft.Extensions.Configuration
 > system by providing attribute-based support, allowing more flexible and structured control over configuration
