@@ -50,8 +50,8 @@ namespace Microsoft.Extensions.Configuration.Annotations.Binders
             this.ConfigureBinder = binderOptions =>
             {
                 // Configure binding options: whether to bind non-public properties and whether to throw errors for unknown configuration properties
-                binderOptions.BindNonPublicProperties = OptionsAttribute.BindNonPublicProperties;
-                binderOptions.ErrorOnUnknownConfiguration = OptionsAttribute.ErrorOnUnknownConfiguration;
+                binderOptions.BindNonPublicProperties = OptionsAttribute.EnablePrivateBinding;
+                binderOptions.ErrorOnUnknownConfiguration = OptionsAttribute.ThrowOnUnknownConfig;
             };
         }
     }

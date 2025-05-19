@@ -18,13 +18,13 @@ public class OptionsAttribute : Attribute
     /// Determines whether non-public properties should be bound.
     /// Default is false
     /// </summary>
-    public bool BindNonPublicProperties { get; set; }
+    public bool EnablePrivateBinding { get; set; }
     
     /// <summary>
     /// Specifies whether an error should be thrown for unknown configuration properties.
     /// Default is false
     /// </summary>
-    public bool ErrorOnUnknownConfiguration { get; set; }
+    public bool ThrowOnUnknownConfig { get; set; }
     
     
     /// <summary>
@@ -47,12 +47,12 @@ public class OptionsAttribute : Attribute
     /// Initializes an instance of `OptionsAttribute` with additional binding configurations.
     /// </summary>
     /// <param name="sessionKey">Configuration section name.</param>
-    /// <param name="bindNonPublicProperties">Specifies whether non-public properties should be bound.</param>
-    /// <param name="errorOnUnknownConfiguration">Specifies whether an error should be thrown for unknown configuration properties.</param>
-    public OptionsAttribute(string sessionKey, bool bindNonPublicProperties, bool errorOnUnknownConfiguration)
+    /// <param name="enablePrivateBinding">Specifies whether non-public properties should be bound.</param>
+    /// <param name="throwOnUnknownConfig">Specifies whether an error should be thrown for unknown configuration properties.</param>
+    public OptionsAttribute(string sessionKey, bool enablePrivateBinding , bool throwOnUnknownConfig)
     {
         this.SessionKey = sessionKey;
-        this.BindNonPublicProperties = bindNonPublicProperties;
-        this.ErrorOnUnknownConfiguration = errorOnUnknownConfiguration;
+        this.EnablePrivateBinding = enablePrivateBinding;
+        this.ThrowOnUnknownConfig = throwOnUnknownConfig;
     }
 }
