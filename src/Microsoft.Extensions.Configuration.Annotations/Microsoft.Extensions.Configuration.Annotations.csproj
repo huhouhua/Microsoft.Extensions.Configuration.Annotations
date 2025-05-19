@@ -19,8 +19,8 @@
         <RepositoryUrl>https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>docs/LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>docs/README.md</PackageReadmeFile>
     </PropertyGroup>
     
     <ItemGroup>
