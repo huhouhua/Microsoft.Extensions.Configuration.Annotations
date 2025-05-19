@@ -16,7 +16,7 @@
         <PackageReleaseNotes>$(Description)</PackageReleaseNotes>
         <PolySharpExcludeGeneratedTypes>System.Runtime.CompilerServices.RequiresLocationAttribute;System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute</PolySharpExcludeGeneratedTypes>
         <PackageProjectUrl>https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations</RepositoryUrl>
+        <RepositoryUrl>https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
