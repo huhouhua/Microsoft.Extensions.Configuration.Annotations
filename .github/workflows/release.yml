@@ -3,18 +3,19 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      is_stable_build:
-        description: Use a version number indicating this is a stable release
-        required: true
-        default: "false"
       release:
         description: Create a release
         required: true
         default: "true"
+      releaseNotes:
+        description: Release notes
+        required: false
+        default: ""
       version:
         description: Release version
         required: false
         default: ""
+        type: string
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -71,6 +72,9 @@ jobs:
           name: ${{ env.PACKAGE_VERSION }}
           tag_name: v${{ env.PACKAGE_VERSION }}
           body: |
+            ## What's Changed
+            ${{ github.event.inputs.releaseNotes }}
+            
             ## How to get this update
             Packages have been posted to these feeds:
 
