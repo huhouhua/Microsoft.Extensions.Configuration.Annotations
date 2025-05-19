@@ -60,7 +60,7 @@ public class MyAppOptions
 
 绑定非public的属性
 ```c#
-[Options(SessionKey = "app", BindNonPublicProperties = true)]
+[Options(SessionKey = "app", BindNonPublic = true)]
 public class AppOptions
 {
     private int Id { get; set; }
@@ -78,7 +78,7 @@ public class AppOptions
 //     "Name":"my app",
 //     "Version": "1.0.0"
 // }
-[Options(SessionKey = "app", BindNonPublicProperties = true,ErrorOnUnknownConfiguration = true)]
+[Options(SessionKey = "app", BindNonPublic = true,ThrowOnUnknownConfig = true)]
 public class AppOptions
 {
     private int Id { get; set; }

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 namespace Annotations.WebAPI.Examples;
 
 [Validate(typeof(AppValidateOptions))]
-[Options("app")]
+[Options("app",true,false)]
 public class AppOptions
 {
     public int Id { get; set; }
@@ -13,8 +13,8 @@ public class AppOptions
     public string Name { get; }
 
     public string Version { get; set; }
-
-    public string Description { get; set; }
+     
+    internal string Description { get; set; }
 }
 
 public class AppValidateOptions : IValidateOptions<AppOptions>

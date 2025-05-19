@@ -63,7 +63,7 @@ public class MyAppOptions
 
 Example: Bind Non-Public Properties
 ```c#
-[Options(SessionKey = "app", BindNonPublicProperties = true)]
+[Options(SessionKey = "app", BindNonPublic = true)]
 public class AppOptions
 {
     private int Id { get; set; }
@@ -81,7 +81,7 @@ Example: Throw Exception if Missing Properties
 //     "Name":"my app",
 //     "Version": "1.0.0"
 // }
-[Options(SessionKey = "app", BindNonPublicProperties = true,ErrorOnUnknownConfiguration = true)]
+[Options(SessionKey = "app", BindNonPublic = true,ThrowOnUnknownConfig = true)]
 public class AppOptions
 {
     private int Id { get; set; }

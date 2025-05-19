@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 namespace Annotations.ConsoleApp.Examples;
 
 [Validate(typeof(AppValidateOptions))]
-[Options(SessionKey = "app",EnablePrivateBinding = true,ThrowOnUnknownConfig = true)]
+[Options(SessionKey = "app",BindNonPublic = true,ThrowOnUnknownConfig = true)]
 public class AppOptions
 {
     private int Id { get; set; }
@@ -13,7 +13,7 @@ public class AppOptions
     
     public string Version { get; set; }
     
-    public string Description { get; set; }
+    internal string Description { get; set; }
 }
 
 
