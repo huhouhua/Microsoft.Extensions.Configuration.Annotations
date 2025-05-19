@@ -2,20 +2,23 @@
 ![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
 [![NuGet](https://img.shields.io/nuget/v/Ares.Extensions.Configuration.Annotations.svg?style=flat-square)](https://www.nuget.org/Ares.Extensions.Configuration.Annotations)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
-[![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
+[![NuGet](https://img.shields.io/nuget/dt/Ares.Extensions.Configuration.Annotations?style=flat&logo=nuget&cacheSeconds=1&label=Downloads)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations)
 
-> English | [中文](README_zh.md)
+> English | [简体中文](README_zh.md)
 
 > Microsoft.Extensions.Configuration.Annotations is a library that extends the Microsoft.Extensions.Configuration
 > system by providing attribute-based support, allowing more flexible and structured control over configuration
 > items during the binding process via AOP.
 
 ## Features
-- Attribute Support: Bind and validate configuration items using attributes.
-
+- Attribute Support: Automatically bind and verify configuration items through attributes
+- Automatic registration options
 - Compatibility with Existing Configuration System: Fully compatible with Microsoft.Extensions.Configuration 
-and can be seamlessly integrated into existing projects.
+and can be seamlessly integrated into existing projects
 
+## Requirements
+
+This library requires .NET 8.0+.
 
 ## How to Use
 
@@ -43,6 +46,8 @@ builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typ
 ```
 
 ### How to Define?
+
+The [examples](examples/)  directory contains a couple of clear examples
 
 Example: Standard Options Class
 ```c#
@@ -140,8 +145,8 @@ public class MyService
 
     public void PrintSettings()
     {
-      Console.WriteLine(options.Value.Id);
-      Console.WriteLine(options.Value.Name);
+      Console.WriteLine(_myAppOptions.Id);
+      Console.WriteLine(_myAppOptions.Name);
     }
 }
 ```

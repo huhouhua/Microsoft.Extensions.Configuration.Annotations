@@ -2,18 +2,20 @@
 ![workflow ci](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/actions/workflows/dotnet.yml/badge.svg)
 [![NuGet](https://img.shields.io/nuget/v/Ares.Extensions.Configuration.Annotations.svg?style=flat-square)](https://www.nuget.org/Ares.Extensions.Configuration.Annotations)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/blob/main/LICENSE)
-[![Releases](https://img.shields.io/github/downloads/huhouhua/Microsoft.Extensions.Configuration.Annotations/total.svg)](https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations/releases)
+[![NuGet](https://img.shields.io/nuget/dt/Ares.Extensions.Configuration.Annotations?style=flat&logo=nuget&cacheSeconds=1&label=Downloads)](https://www.nuget.org/packages/Ares.Extensions.Configuration.Annotations)
 
-> [English](README.md) | 中文
+> [English](README.md) | 简体中文
 
 > Microsoft.Extensions.Configuration.Annotations 是一个用于扩展 `Microsoft.Extensions.Configuration` 配置功能库，提供注解支持，
-> 使得你可以在配置绑定过程中通过 `AOP`对配置项进行更灵活和结构化的控制。
+> 使得你可以在配置绑定过程中通过 `AOP`对配置项进行自动绑定与注册。
 
 ## 特性
-- 注解支持: 通过注解的方式绑定与验证配置项
-
+- 注解支持: 通过注解的方式自动绑定与验证配置项
+- 自动注册options
 - 与现有配置体系兼容: 完全兼容 Microsoft.Extensions.Configuration，可以在现有的项目中无缝集成。
 
+## 要求
+ 需要.NET 8.0+版本
 
 ## 如何使用
 
@@ -36,13 +38,15 @@ dotnet add package Ares.Extensions.Configuration.Annotations
 var builder = WebApplication.CreateBuilder(args);
 
 // 添加 Ares.Extensions.Configuration.Annotations
-// 并且把`Program`程序集下的所有定义了`OptionsAttribute`的`Attribute` 添加到IServiceCollection
+// `Program`程序集下的所有定义了`OptionsAttribute`的`Options` 添加到IServiceCollection
 builder.Services.AddAttributeConfigurationOptions(builder.Configuration,true,typeof(Program).Assembly);
 ```
 
 ### 如何定义?
 
-示例 标准的Options类
+[示例](examples/)目录包含几个清晰的示例
+
+标准的Options类
 ```c#
 [Options("app")]
 public class MyAppOptions
@@ -54,7 +58,7 @@ public class MyAppOptions
 }
 ```
 
-示例 绑定非public的属性
+绑定非public的属性
 ```c#
 [Options(SessionKey = "app", BindNonPublicProperties = true)]
 public class AppOptions
@@ -65,7 +69,7 @@ public class AppOptions
     ...
 }
 ```
-示例 缺少没有定义的属性，则抛出异常
+缺少没有定义的属性，则抛出异常
 ```c#
 // appsettings.json配置
 //
@@ -86,7 +90,7 @@ public class AppOptions
 ```
 ### 验证器
 
-示例 带验证器的Options类
+带验证器的Options类
 ```c#
 [Validate]
 [Options("app")]
@@ -101,7 +105,7 @@ public class MyAppOptions
 }
 ```
 
-示例 自定义验证器的Options类
+自定义验证器的Options类
 ```c#
 [Validate(typeof(MyAppValidateOptions))]
 [Options("app")]
@@ -125,7 +129,7 @@ public class MyAppValidateOptions : IValidateOptions<MyAppOptions>
 ```
 ### 获取Options
 
-示例 在构造函数中获取
+在构造函数中获取
 ```c#
 public class MyService
 {
@@ -138,13 +142,13 @@ public class MyService
 
     public void PrintSettings()
     {
-      Console.WriteLine(options.Value.Id);
-      Console.WriteLine(options.Value.Name);
+      Console.WriteLine(_myAppOptions.Id);
+      Console.WriteLine(_myAppOptions.Name);
     }
 }
 ```
 
-示例 通过IServiceProvider获取
+通过IServiceProvider获取
 ```c#
 IServiceCollection services = new ServiceCollection();
 

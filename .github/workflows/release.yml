@@ -83,5 +83,5 @@ jobs:
           draft: false
           append_body: true
           generate_release_notes: true
-          prerelease: true
+          prerelease: false
           files: packages/*
