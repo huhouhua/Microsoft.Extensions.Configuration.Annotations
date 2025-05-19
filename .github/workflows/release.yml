@@ -7,10 +7,12 @@ on:
         description: Create a release
         required: true
         default: "true"
+        type: boolean
       releaseNotes:
         description: Release notes
         required: false
         default: ""
+        type: string
       version:
         description: Release version
         required: false

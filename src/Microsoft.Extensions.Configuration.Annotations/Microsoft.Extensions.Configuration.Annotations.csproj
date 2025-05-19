@@ -18,7 +18,6 @@
         <PackageProjectUrl>https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations</PackageProjectUrl>
         <RepositoryUrl>https://github.com/huhouhua/Microsoft.Extensions.Configuration.Annotations.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageLicenseFile>docs/LICENSE</PackageLicenseFile>
         <PackageReadmeFile>docs/README.md</PackageReadmeFile>
     </PropertyGroup>
