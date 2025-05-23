@@ -1,6 +1,7 @@
 // Copyright (c) Kevin Berger Authors. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System.Diagnostics;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Annotations;
@@ -38,7 +39,7 @@ public static class ConfigurationServiceCollectionExtensions
 
         // Ensure that the binder is of type ConfigurationOptionsBinder
         var binderType = binder.GetType();
-        MethodInfo? binderMethod = binderType.GetMethod("Bind");
+        MethodInfo? binderMethod = binderType.GetMethod("Bind", BindingFlags.Public | BindingFlags.Instance);
 
         // Iterate through each assembly to find types with the `OptionsAttribute`
         foreach (var assembly in assemblies)
@@ -46,13 +47,12 @@ public static class ConfigurationServiceCollectionExtensions
             foreach (var optionsType in assembly.GetTypes().Where(q => q.IsDefined(typeof(OptionsAttribute), true)))
             {
                 var optionsAttribute = optionsType.GetCustomAttribute<OptionsAttribute>();
-                if (optionsAttribute is null) continue;
 
                 // Get the optional `ValidateAttribute` for validation
                 var validateAttribute = optionsType.GetCustomAttribute<ValidateAttribute>();
 
                 // Get the section key from the attribute or use the class name as default
-                var key = optionsAttribute.SessionKey ?? optionsType.Name;
+                var key = optionsAttribute!.SessionKey ?? optionsType.Name;
                 var section = configuration.GetSection(key);
 
                 var context = new BinderContext(optionsAttribute, validateAttribute, enableGlobalAnnotation);
@@ -83,7 +83,7 @@ public static class ConfigurationServiceCollectionExtensions
         params Assembly[] assemblies)
     {
         // Use a default instance of ConfigurationOptionsBinderImpl when no binder is provided
-        return services.AddAttributeConfigurationOptions(configuration, enableGlobalAnnotation, 
+        return services.AddAttributeConfigurationOptions(configuration, enableGlobalAnnotation,
             new ConfigurationOptionsBinderImpl(services), assemblies);
     }
 }
