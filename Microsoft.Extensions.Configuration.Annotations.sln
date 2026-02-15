@@ -21,11 +21,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Extensions.Configuration.Annotations.Test", "test\Microsoft.Extensions.Configuration.Annotations.Test\Microsoft.Extensions.Configuration.Annotations.Test.csproj", "{71615AD7-44AF-49BF-B15F-5E091F8846ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E0BCF406-E25A-4BCA-B0B0-F5168F7080D4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{401D857E-C9DF-4148-89F0-886852E2984A}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 		.github\workflows\release.yml = .github\workflows\release.yml
+		.github\workflows\codeql-analysis.yml = .github\workflows\codeql-analysis.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{F91FCCA3-8EEF-42F0-9503-719D137B5F9F}"
