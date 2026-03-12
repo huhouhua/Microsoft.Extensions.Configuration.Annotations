@@ -28,8 +28,8 @@
         <None Include="..\..\README_zh.md" Pack="true" PackagePath="docs/" />
         <None Include="..\..\LICENSE" Pack="true" PackagePath="docs/" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.4" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.3" />
-      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.3" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.4" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.4" />
       <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="10.0.3" />
     </ItemGroup>
 
