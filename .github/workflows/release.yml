@@ -53,7 +53,7 @@ jobs:
     steps:
       - run: echo "Releasing ${{ env.PACKAGE_VERSION }}"
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v3
+        uses: NuGet/setup-nuget@v4
         with:
           nuget-version: latest
       - uses: actions/download-artifact@v8
